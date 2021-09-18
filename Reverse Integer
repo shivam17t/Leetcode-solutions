@@ -1,0 +1,33 @@
+class Solution:
+
+    def reverse(self, x: int) -> int:
+
+        try:
+
+            n = abs(x)
+
+            c = 0
+
+            y = len(str(n))
+
+            for i in range(y):
+
+                a = n % 10
+
+                n = n // 10
+
+                b = a * pow(10 , y-i-1)
+
+                c += b
+
+            if x > 0:
+
+                return (c if c <= (2**31 -1) else 0)
+
+            else:
+
+                return (-c if c <= (2**31) else 0)
+
+        except:
+
+            return 0
